@@ -25,8 +25,9 @@ bdisplay.textContent = bvalue;
 correctsq= get_random(6);
 // options[0].style.backgroundColor=set_rgb(rvalue,gvalue,bvalue);
 var gameover = false;
+console.log(correctsq)
 for( var i=0; i< options.length ; i++){
-	
+		
 		if(i===correctsq){
 			options[i].style.backgroundColor=set_rgb(rvalue,gvalue,bvalue);
 			options[i].addEventListener("click",function(){
