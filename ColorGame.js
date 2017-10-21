@@ -10,7 +10,7 @@ function get_random_color(){
 }
 
 function get_random(value){
-	return Math.floor((Math.random() * value) + 1);
+	return Math.floor((Math.random() * value) + 0);
 }
 // var rvalue=100;
 var rvalue = get_random_color();
