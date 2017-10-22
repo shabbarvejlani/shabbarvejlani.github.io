@@ -22,6 +22,10 @@ function get_random(value){
 	return Math.floor((Math.random() * value) + 0);
 }
 
+function get_opacity(value){
+	return (value/255.0)
+}
+
 function setup_listeners(){
 	for(var i=0; i <options.length; i++){
 		options[i].addEventListener("click",function(){
@@ -58,9 +62,22 @@ function init(){
 	rdisplay.textContent = rvalue;
 	gdisplay.textContent = gvalue;
 	bdisplay.textContent = bvalue;
-	quiz_r.style.backgroundColor=set_rgb(rvalue,0,0)
-	quiz_g.style.backgroundColor=set_rgb(0,gvalue,0)
-	quiz_b.style.backgroundColor=set_rgb(0,0,bvalue)
+	//quiz_r.style.backgroundColor=set_rgb(rvalue,0,0)
+	//quiz_g.style.backgroundColor=set_rgb(0,gvalue,0)
+	//quiz_g.style.backgroundColor=set_rgb(0,gvalue,0)
+	
+	//quiz_b.style.backgroundColor=set_rgb(0,0,bvalue)
+	//quiz_b.style.backgroundColor=set_rgb(0,0,bvalue)
+
+	quiz_r.style.backgroundColor="red"
+	quiz_r.style.opacity=get_opacity(rvalue)
+	
+	quiz_g.style.backgroundColor="green"
+	quiz_g.style.opacity=get_opacity(gvalue)
+	
+	quiz_b.style.backgroundColor="blue"
+	quiz_b.style.opacity=get_opacity(bvalue)
+	
 	correctsq= get_random(6);
 	message.textContent=""
 	gameover=false;
