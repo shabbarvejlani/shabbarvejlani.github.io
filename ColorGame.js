@@ -6,6 +6,7 @@ var reset = document.querySelector("#reset");
 var quiz_r = document.querySelector("#quiz_r");
 var quiz_g = document.querySelector("#quiz_g");
 var quiz_b = document.querySelector("#quiz_b");
+var message = document.querySelector("#message");
 var correctsq;
 var rvalue; 
 var gvalue;
@@ -30,10 +31,12 @@ function setup_listeners(){
 				for(var j=0;j< options.length;j++){
 					options[j].style.backgroundColor=set_rgb(rvalue,gvalue,bvalue);	
 				}
+				message.textContent="Correct!"
 				gameover=true;
 			} else {
 				if(!gameover){
 					this.style.backgroundColor='white';
+					message.textContent="Try Again!"
 				}			
 			}
 		})
@@ -59,18 +62,19 @@ function init(){
 	quiz_g.style.backgroundColor=set_rgb(0,gvalue,0)
 	quiz_b.style.backgroundColor=set_rgb(0,0,bvalue)
 	correctsq= get_random(6);
-	
+	message.textContent=""
 	gameover=false;
 
 	for( var i=0; i< options.length ; i++){
 		if(i===correctsq){
 			options[i].style.backgroundColor=set_rgb(rvalue,gvalue,bvalue);	
-
+			
 		} else {
 			options[i].style.backgroundColor=set_rgb(
 				get_random_color(),
 				get_random_color(),
 				get_random_color());
+
 		}
 		options[i].id=i;
 	}

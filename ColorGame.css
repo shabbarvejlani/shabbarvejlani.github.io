@@ -5,6 +5,12 @@
 	float : left;
 	margin: 5px;
 }
+.textspace{
+	width : 30px;
+	height : 20px;
+	float : left;
+	margin: 5px;
+}
 .quiz{
 	background-color: red;
 	width : 30px;
